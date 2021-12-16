@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication of three values</title>
+
+    <style>
+        div {
+            width: 500px;
+            margin: 100px auto;
+            padding: 30px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+            background:-webkit-linear-gradient(135deg, orange 60%, cyan);
+
+        }
+        input,button {
+            margin: 10px;
+            padding: 10px 60px;
+           background-color: rgb(248, 247, 241);
+           
+        }
+        button:hover {
+           
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+button{
+    border-radius: 50%;
+    background-color: rgb(140, 235, 17);
+   
+}
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Multiplication of three numbers</h1>
+        <input id="a" type="number" placeholder="enter value of a"><br>
+        <input id="b" type="number" placeholder="enter value of b"><br>
+        <input id="c" type="number" placeholder="enter value of c"><br>
+        <button id="btn">click for Multiplication</button>
+        <p id="output"></p>
+
+    </div>
+
+    <script>
+        function multiply(a) {
+            return function (b) {
+                return function (c) {
+                    return a*b*c
+                }
+                
+            }
+            
+        }
+        document.querySelector("button").addEventListener('click',()=>{
+            let a= document.getElementById("a").value
+            let b = document.getElementById("b").value
+            let c = document.getElementById("c").value
+
+            let x = multiply(a)(b)(c)
+            console.log(x)
+
+            let h1 = document.createElement("h1");
+            h1.innerText = x;
+
+            document.getElementById("output").appendChild(h1);
+          
+
+        })
+    </script>
+</body>
+</html>
